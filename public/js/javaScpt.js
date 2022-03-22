@@ -1,6 +1,3 @@
-console.log("This is node file")
-
-
 const weatherForm = document.querySelector('form')
 const searchedLocation = document.querySelector('input')
 const resultSend = document.querySelector('.result')
