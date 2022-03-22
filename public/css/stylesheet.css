@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Hurricane&display=swap');
+body {
+    font-family: 'Hurricane', cursive;
+    word-spacing: 1rem;
+    color: #333333;
+    margin: 0 auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.homeDiv {
+    flex-grow: 1;
+}
+
+footer {
+    color: #888888;
+    border-top: 1px solid black;
+}
+
+header {
+    margin-top: 15px;
+    margin-bottom: 48px;
+}
+
+header>a {
+    margin-right: 1rem;
+    color: orange;
+    font-weight: bolder;
+    word-spacing: 1rem;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 30px;
+}
+
+.proPic {
+    width: 250px;
+}
+
+.result {
+    font-weight: bold;
+}
