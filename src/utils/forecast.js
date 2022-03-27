@@ -12,7 +12,8 @@ const forecast = (latitude, longitude, callback) => {
             callback('Kindly enter the location', undefined)
         } else {
             callback(undefined, {
-                weather: body.current.weather_descriptions,
+                temp: body.current.temperature,
+                descp: body.current.weather_descriptions,
                 wind: body.current.wind_speed
             })
         }

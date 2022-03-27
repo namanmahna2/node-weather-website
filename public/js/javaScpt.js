@@ -13,9 +13,8 @@ weatherForm.addEventListener('submit', (e) => {
             if (data.error) {
                 paraOne.textContent = data.error
             } else {
-                console.log(data.location, data.wind)
-                resultSend.textContent = `${data.address}'s Wind Speed is ${data.wind} and the Weather is ${data.weather}`
-                paraOne.textContent = ''
+                resultSend.textContent = data.result
+                paraOne.textContent = data.address
             }
         })
     })

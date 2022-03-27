@@ -22,15 +22,16 @@ app.use(express.static(staticPath))
 
 app.get("/", (req, res) => {
     res.render('index11', {
-        name: "Weather",
+        title: "Weather",
         age: 26
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        name: "Naman",
-        age: 26
+        title: "About",
+        age: 26,
+        name: "Naman"
     })
 })
 
@@ -45,18 +46,17 @@ app.get('/weather', (req, res) => {
     const address = req.query.address
 
     if (address) {
-        geocode(address, (error, { latitude, longitude, location }) => {
+        geocode(address, (error, { latitude, longitude }) => {
             if (error) {
                 res.send({ error })
             } else {
-                forecast(latitude, longitude, (error, { weather, wind }) => {
+                forecast(latitude, longitude, (error, { temp, descp, wind }) => {
                     if (error) {
                         res.send({ error })
                     } else {
                         res.send({
-                            wind,
-                            weather,
-                            address
+                            address,
+                            result: `Temperature is ${temp} and its ${descp}. Today wind is blowing at ${wind}mph.`
                         })
                     }
                 })
