@@ -50,13 +50,14 @@ app.get('/weather', (req, res) => {
             if (error) {
                 res.send({ error })
             } else {
-                forecast(latitude, longitude, (error, { temp, descp, wind }) => {
+                forecast(latitude, longitude, (error, { temp, descp, wind, windDir }) => {
                     if (error) {
                         res.send({ error })
                     } else {
                         res.send({
                             address,
-                            result: `Temperature is ${temp} and its ${descp}. Today wind is blowing at ${wind}mph.`
+                            result: `Temperature is ${temp} and its ${descp}. Today wind is blowing at ${wind}mph.`,
+                            windD: `Direction of Wind Flow is ${windDir}`
                         })
                     }
                 })
